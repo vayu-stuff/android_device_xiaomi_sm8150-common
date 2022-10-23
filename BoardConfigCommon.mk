@@ -84,7 +84,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=2048 loop.max_part=7 androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 ifneq ($(TARGET_IS_LEGACY),true)
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 else
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 endif
@@ -216,7 +216,7 @@ endif
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/cherish/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 ODM_MANIFEST_SKUS += nfc nfc_ese
